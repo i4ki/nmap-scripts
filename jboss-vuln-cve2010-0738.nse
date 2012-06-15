@@ -253,7 +253,7 @@ String jsp_file = jboss_home + "/deploy/]]
                return vuln_report:make_output(vuln)
             else
                pdebug("FAILED TO EXECUTE UPLOADED REVERSE SHELL")
-               if (res ~= nil) then
+               if (res ~= nil and res['status'] ~= nil and res['status-line']) then
                   pdebug("%d: %s", res['status'], res['status-line'])
                end
                if (i < 9) then pdebug("TRYING EXECUTING AGAIN... (%d)", i) end
